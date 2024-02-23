@@ -1,4 +1,4 @@
-<?php include_once 'header.php'; ?><!-- log on to codeastro.com for more projects -->
+<?php include_once 'header.php'; ?>
 <?php include_once 'footer.php';
 require '../helpers/init_conn_db.php';?>
 <?php
@@ -20,7 +20,7 @@ if(isset($_POST['del_flight']) and isset($_SESSION['adminId'])) {
   }
 }
 ?>
-<!-- log on to codeastro.com for more projects -->
+
 <style>
 table {
   background-color: white;
@@ -55,10 +55,10 @@ td {
         <?php if(isset($_SESSION['adminId'])) { ?>
           <div class="container-md mt-2">
             <h1 class="display-4 text-center text-secondary"
-              >FLIGHT LIST</h1>
+              >Lista de Vuelos</h1>
             <table class="table table-bordered">
               <thead class="table-dark">
-                <tr><!-- log on to codeastro.com for more projects -->
+                <tr>
                   <th scope="col">ID</th>
                   <th scope="col">Arrival</th>
                   <th scope="col">Departure</th>
@@ -110,4 +110,4 @@ td {
         <?php } ?>
 
     </main>
-	<!-- log on to codeastro.com for more projects -->
+	
