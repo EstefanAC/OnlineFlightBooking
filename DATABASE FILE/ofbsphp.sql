@@ -38,8 +38,8 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`admin_id`, `admin_uname`, `admin_email`, `admin_pwd`) VALUES
-(1, 'admin', 'admin@mail.com', '$2y$10$KRXGkY.dxYjD8FLZclW/Tu04wl76lD7IA4Z3nAsxtpdZxHNbYo4ZW');
-
+(1, 'admin', 'admin@mail.com', '$2y$10$KRXGkY.dxYjD8FLZclW/Tu04wl76lD7IA4Z3nAsxtpdZxHNbYo4ZW'),
+(2, 'carlos', 'carlos@mail.com', 'Carlos.123');
 -- --------------------------------------------------------
 
 --
@@ -57,17 +57,17 @@ CREATE TABLE `airline` (
 --
 
 INSERT INTO `airline` (`airline_id`, `name`, `seats`) VALUES
-(1, 'Core Airways', 165),
-(2, 'Echo Airline', 220),
-(3, 'Spark Airways', 125),
-(4, 'Peak Airways', 210),
-(5, 'Homelander Airways', 185),
-(9, 'Blue Airlines', 200),
-(10, 'GoldStar Airways', 205),
-(11, 'Novar Airways', 158),
-(12, 'Aero Airways', 210),
-(13, 'Nep Airways', 215),
-(14, 'Delta Airlines', 135);
+(1, 'Avianca', 165),
+(2, 'America Airline', 220),
+(3, 'Aeromexico', 125),
+(4, 'COPA', 210),
+(5, 'Delta Airlines', 185),
+(9, 'Aereo Regional', 200),
+(10, 'LATAM Airlines', 205),
+(11, 'LATAM Peru', 158),
+(12, 'Spirit', 210),
+(13, 'Air Europa', 215),
+(14, 'JetBlue Airways', 135);
 
 -- --------------------------------------------------------
 
@@ -84,24 +84,24 @@ CREATE TABLE `cities` (
 --
 
 INSERT INTO `cities` (`city`) VALUES
-('San Jose'),
+('Galapagos'),
 ('Chicago'),
-('Olisphis'),
-('Shiburn'),
-('Weling'),
-('Chiby'),
-('Odonhull'),
-('Hegan'),
-('Oriaridge'),
-('Flerough'),
-('Yleigh'),
-('Oyladnard'),
-('Trerdence'),
-('Zhotrora'),
-('Otiginia'),
-('Plueyby'),
-('Vrexledo'),
-('Ariosey');
+('Miami'),
+('Quito'),
+('Guayaquil'),
+('Cuenca'),
+('Bogota'),
+('Rio de Janero'),
+('Lima'),
+('Buenos Aires'),
+('Ciudad de Panama'),
+('New York'),
+('Los Angeles'),
+('San Francisco'),
+('Madrid'),
+('Barcelona'),
+('Paris'),
+('Londres');
 
 -- --------------------------------------------------------
 
@@ -147,27 +147,16 @@ CREATE TABLE `flight` (
 --
 
 INSERT INTO `flight` (`flight_id`, `admin_id`, `arrivale`, `departure`, `Destination`, `source`, `airline`, `Seats`, `duration`, `Price`, `status`, `issue`, `last_seat`, `bus_seats`, `last_bus_seat`) VALUES
-(1, 1, '2022-06-30 10:03:00', '2022-06-30 09:01:00', 'Chicago', 'San', 'Core Airways', '63', '1', 175, '', '', '21B', 20, ''),
-(2, 1, '2022-07-05 11:15:00', '2022-07-05 10:05:00', 'Shiburn', 'Olisphis', 'Core Airways', '61', '1', 185, 'arr', '', '21D', 20, ''),
-(3, 1, '2022-07-05 12:13:00', '2022-07-05 10:13:00', 'Weling', 'Olisphis', 'Spark Airways', '123', '2', 205, 'arr', '', '21B', 20, ''),
-(4, 1, '2022-07-05 16:30:00', '2022-07-05 15:26:00', 'Weling', 'Shiburn', 'Echo Airline', '220', '1', 155, 'issue', '120', '', 20, ''),
-(5, 1, '2022-07-05 15:30:00', '2022-07-05 12:30:00', 'Chiby', 'Shiburn', 'Spark Airways', '125', '3', 326, '', '', '', 20, ''),
-(6, 1, '2022-07-05 17:55:00', '2022-07-05 15:30:00', 'Chiby', 'Weling', 'Spark Airways', '125', '2', 285, '', '', '', 20, ''),
-(7, 1, '2022-07-05 20:50:00', '2022-07-05 18:50:00', 'Odonhull', 'Chiby', 'Spark Airways', '125', '2', 265, '', '', '', 20, ''),
-(8, 1, '2022-07-06 00:55:00', '2022-07-05 17:00:00', 'Oyladnard', 'Odonhull', 'Homelander Airways', '183', '7', 615, 'arr', '', '21B', 20, ''),
-(9, 1, '2022-07-05 17:09:00', '2022-07-05 16:05:00', 'Chiby', 'Olisphis', 'Peak Airways', '210', '1', 155, '', '', '', 20, ''),
-(10, 1, '2022-07-06 13:10:00', '2022-07-06 11:05:00', 'Hegan', 'Shiburn', 'Core Airways', '165', '2', 200, '', '', '', 20, ''),
-(11, 1, '2022-07-05 19:10:00', '2022-07-05 18:05:00', 'Oriaridge', 'Flerough', 'Echo Airline', '220', '1', 165, '', '', '', 20, ''),
-(12, 1, '2022-07-05 21:10:00', '2022-07-05 19:05:00', 'Chicago', 'Yleigh', 'Peak Airways', '210', '2', 320, '', '', '', 20, ''),
-(13, 1, '2022-07-05 13:50:00', '2022-07-05 12:56:00', 'Olisphis', 'Chicago', 'Core Airways', '165', '1', 110, 'issue', '110', '', 20, ''),
-(14, 1, '2022-07-05 11:08:00', '2022-07-05 09:07:00', 'Oyladnard', 'San', 'Spark Airways', '125', '2', 195, 'issue', '120', '', 20, ''),
-(15, 1, '2022-07-05 10:10:00', '2022-07-05 08:10:00', 'Weling', 'Chicago', 'Peak Airways', '210', '2', 125, 'issue', '120', '', 20, ''),
-(16, 1, '2022-07-05 18:10:00', '2022-07-05 16:09:00', 'Flerough', 'San', 'Homelander Airways', '185', '2', 220, 'dep', '', '', 20, ''),
-(17, 1, '2022-07-05 17:10:00', '2022-07-05 16:10:00', 'San', 'Chiby', 'Echo Airline', '220', '1', 125, 'arr', '', '', 20, ''),
-(18, 1, '2022-07-05 19:15:00', '2022-07-05 16:12:00', 'San', 'Flerough', 'Core Airways', '165', '3', 275, 'dep', '', '', 20, ''),
-(19, 1, '2022-07-05 23:40:00', '2022-07-05 20:31:00', 'Shiburn', 'Oyladnard', 'Aero Airways', '210', '3', 295, '', '', '', 20, ''),
-(20, 1, '2022-07-05 23:58:00', '2022-07-05 22:14:00', 'Zhotrora', 'Trerdence', 'Aero Airways', '208', '1', 185, 'dep', '', '21B', 20, ''),
-(21, 1, '2022-07-06 10:14:00', '2022-07-05 23:15:00', 'Odonhull', 'Otiginia', 'Blue Airlines', '200', '11', 965, '', '', '', 20, '');
+(1, 1, '2023-06-30 10:03:00', '2023-06-30 09:01:00', 'Galapagos', 'Chicago', 'Avianca', '63', '1', 175, '', '', '21B', 20, ''),
+(2, 1, '2023-07-05 11:15:00', '2023-07-05 10:05:00', 'Chicago', 'Miami', 'COPA', '61', '1', 185, 'arr', '', '21D', 20, ''),
+(3, 1, '2023-07-05 12:13:00', '2023-07-05 10:13:00', 'Chicago', 'Quito', 'Avianca', '123', '2', 205, 'arr', '', '21B', 20, ''),
+(4, 1, '2023-07-05 16:30:00', '2023-07-05 15:26:00', 'Miami', 'Quito', 'COPA', '220', '1', 155, 'issue', '120', '', 20, ''),
+(5, 1, '2023-07-05 15:30:00', '2023-07-05 12:30:00', 'Quito', 'Guayaquil', 'Delta Airlines', '125', '3', 326, '', '', '', 20, ''),
+(6, 1, '2023-07-05 17:55:00', '2023-07-05 15:30:00', 'Quito', 'Cuenca', 'Delta Airlines', '125', '2', 285, '', '', '', 20, ''),
+(7, 1, '2023-07-05 20:50:00', '2023-07-05 18:50:00', 'Guayaquil', 'Bogota', 'Aereo Regional', '125', '2', 265, '', '', '', 20, ''),
+(8, 1, '2023-07-06 00:55:00', '2023-07-05 17:00:00', 'Cuenca', 'Miami', 'Avianca', '183', '7', 615, 'arr', '', '21B', 20, ''),
+(9, 1, '2023-07-05 17:09:00', '2023-07-05 16:05:00', 'Bogota', 'Galapagos', 'Aereo Regional', '210', '1', 155, '', '', '', 20, ''),
+(10, 1, '2023-07-06 13:10:00', '2023-07-06 11:05:00', 'Lima', 'Quito', 'LATAM Peru', '165', '2', 200, '', '', '', 20, '');
 
 -- --------------------------------------------------------
 
