@@ -13,8 +13,8 @@ if(isset($_POST['air_but'])) {
         mysqli_stmt_execute($stmt); 
         header('Location: ../../admin/index.php');
         exit();       
-        mysqli_stmt_close($stmt);
-        mysqli_close($conn);          
+        //mysqli_stmt_close($stmt);
+        //mysqli_close($conn);          
     }
 
 } else {
