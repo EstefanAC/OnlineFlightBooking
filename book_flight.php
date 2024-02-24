@@ -19,27 +19,27 @@ h1{
 	text-align:center;
 }
 body {
-  background: #bdc3c7;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #bdc3c7;  
+  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  
+  background: linear-gradient(to right, #2c3e50, #bdc3c7); 
 
 }
 th {
   font-size: 22px;
-  /* font-family: 'Courier New', Courier, monospace; */
+  
 }
 td {
   margin-top: 10px !important;
   font-size: 16px;
   font-weight: bold;
-  /* color: #3931af; */
+  
   color: #424242;
 }
 </style>
     <main>
-        <?php if(isset($_POST['search_but'])) { 
-            $dep_date = $_POST['dep_date'];                        
-            $ret_date = $_POST['ret_date'];  
+    <?php if(isset($_POST['search_but'])) {
+            $dep_date = isset($_POST['dep_date']) ? $_POST['dep_date'] : null;                        
+            $ret_date = isset($_POST['ret_date']) ? $_POST['ret_date']: null;
             $dep_city = $_POST['dep_city'];  
             $arr_city = $_POST['arr_city'];     
             $type = $_POST['type'];
@@ -75,11 +75,17 @@ td {
               </thead>
               <tbody>
                 <?php
-                $sql = 'SELECT * FROM Flight WHERE source=? AND Destination =? AND 
-                    DATE(departure)=? ORDER BY Price';
+                $sql = 'SELECT * FROM Flight WHERE source=? AND Destination =?';
+                $params = array($dep_city, $arr_city);
+                if(!empty($dep_date)){
+                  $sql .= ' AND DATE(departure)=?';
+                  $params[] = $dep_date;
+                }
+                $sql .= ' ORDER BY Price';
                 $stmt = mysqli_stmt_init($conn);
-                mysqli_stmt_prepare($stmt,$sql);                
-                mysqli_stmt_bind_param($stmt,'sss',$dep_city,$arr_city,$dep_date);
+                mysqli_stmt_prepare($stmt,$sql);
+                $types = str_repeat('s', count($params));        
+                mysqli_stmt_bind_param($stmt, $types, ...$params);
                 mysqli_stmt_execute($stmt);
                 $result = mysqli_stmt_get_result($stmt);
                 while ($row = mysqli_fetch_assoc($result)) {
@@ -144,13 +150,12 @@ td {
                   echo '</tr> ';                 
                 }
                 ?>
-
               </tbody>
             </table>
 
           </div>
         <?php } ?>
-
+    </main>
     </main>
     <?php subview('footer.php'); ?> 
     <footer style="
@@ -162,6 +167,6 @@ td {
 	<em><h5 class="text-light text-center p-0 brand mt-2">
 				<img src="assets/images/airtic.png" 
 					height="40px" width="40px" alt="">				
-			Online Flight Booking</h5></em>
-	<p class="text-light text-center">&copy; <?php echo date('Y');?> - Developed By Sujoy Dcunha, Christina Pereira, Mark Coutinho</p>
+			VIAJES VERUM SOMMIÀ</h5></em>
+	<p class="text-light text-center">&copy; <?php echo date('Y');?> - Developed By Grupo Desarrollo de Sistemas</p>
 </footer>
