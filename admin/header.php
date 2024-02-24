@@ -11,7 +11,7 @@ session_start();
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/44f557ccce.js"></script>
-        <title>Online Flight Booking</title>          
+        <title>VIAJES VERUM SOMMIÁ</title>          
         <link rel = "icon" href =  
             "../assets/images/brand.png" 
         type = "image/x-icon">          
@@ -37,7 +37,7 @@ button.btn-outline-light:hover {
     <body>
 
         <nav class="navbar navbar-custom navbar-expand-lg navbar-dark">
-          <a class="navbar-brand text-light" href="index.php"><h4>ADMIN PANEL</h4></a>
+          <a class="navbar-brand text-light" href="index.php"><h4>PANEL ADMINISTRACIÓN</h4></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -59,17 +59,17 @@ button.btn-outline-light:hover {
 
                   <li class="nav-item">
                     <a class="nav-link" href="flight.php">
-                      <h5 class="ml-2"> Add Flight</h5>
+                      <h5 class="ml-2"> Agregar Vuelo</h5>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="all_flights.php">
-                      <h5>List Flights</h5>
+                      <h5>Listar Vuelos</h5>
                     </a>
                   </li>   
                   <li class="nav-item">
                     <a class="nav-link" href="list_airlines.php">
-                      <h5>Manage Airlines</h5>
+                      <h5>Administrar Vuelos</h5>
                     </a>
                   </li>              
                   <!-- <li class="nav-item">
@@ -113,7 +113,7 @@ button.btn-outline-light:hover {
                 </ul>                 
                 <form action="../includes/logout.inc.php" method="POST">
                 <button class="btn btn-outline-light m-2" type="submit">
-                    Logout </button>
+                    Salir </button>
                 </form> 
             </div>
             <?php } ?>
