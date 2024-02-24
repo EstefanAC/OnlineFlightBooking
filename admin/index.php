@@ -1,10 +1,10 @@
 <?php include_once 'header.php'; 
 require '../helpers/init_conn_db.php';?>
-<!-- log on to codeastro.com for more projects -->
+
 <link rel="stylesheet" href="../assets/css/admin.css">
 <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300&family=Poiret+One&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
-<style><!-- log on to codeastro.com for more projects -->
+<style>
   body {
     /* background-color: #B0E2FF; */
     background-color: #efefef;
@@ -78,9 +78,69 @@ require '../helpers/init_conn_db.php';?>
 	background-color:#CF4436;
 }
 
+.form-group-filter{
+    display: flex;
+    width: 100%;
+  }
+  .form-group-filter .btn-primary{
+    height: 100%;
+  }
+
+  .form-group-filter label{
+    width: 100%;
+    padding: 2px;
+    margin: auto;
+    margin-top: 6px;
+    box-sizing: border-box;
+  }
+
+  .form-group-filter input{
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+
+  .form-group-filter label{
+    color: #34495E;
+    font-weight: 600;
+  }
+  @media (max-width:850px){
+
+    #dropdown-filter{
+      width: 40%;
+    }
+
+    .form-group-filter{
+      display: block;
+      width: 100%;
+    }
+    .form-group-filter .btn-primary {
+      height: 98%;
+      width: 88%;
+      text-align: center;
+      font-size: 11px;
+      margin-bottom: 4px;
+    }
+    .form-group-filter label{
+      width: 100%;
+      margin: auto;
+      box-sizing: border-box;
+    }
+
+    .form-group-filter input{
+      margin-top: 5px;
+      margin-right: 5px;
+      width: 87%;
+      font-size: 13px;
+    }
+
+    .form-group-filter label{
+      color: #34495E;
+      font-weight: 600;
+    }
+}
   
 </style>
-    <main><!-- log on to codeastro.com for more projects -->
+    <main>
         <?php if(isset($_SESSION['adminId'])) { ?>
           <div class="container">
 
@@ -88,7 +148,7 @@ require '../helpers/init_conn_db.php';?>
               <div class="dashbord">
                 <div class="icon-section">
                   <i class="fa fa-users" aria-hidden="true"></i><br>
-                 Total Passengers
+                 Total Pasajeros
                   <p><?php include 'psngrcnt.php';?></p>
                 </div>
                
@@ -96,7 +156,7 @@ require '../helpers/init_conn_db.php';?>
               <div class="dashbord dashbord-green">
                 <div class="icon-section">
                   <i class="fa fa-money" aria-hidden="true"></i><br>
-                 Amount
+                  Cantidad
                   <p>$ <?php include 'amtcnt.php';?></p>
                 </div>
                
@@ -104,7 +164,7 @@ require '../helpers/init_conn_db.php';?>
               <div class="dashbord dashbord-red">
                 <div class="icon-section">
                   <i class="fa fa-plane" aria-hidden="true"></i><br>
-                 Flights
+                 Vuelos
                   <p><?php include 'flightscnt.php';?></p>
                 </div>
                
@@ -113,7 +173,7 @@ require '../helpers/init_conn_db.php';?>
               <div class="dashbord dashbord-blue">
                 <div class="icon-section">
                   <i class="fa fa-plane fa-rotate-180" aria-hidden="true"></i><br>
-                 Available Airlines
+                 Aerolíneas Disponibles
                   <p><?php include 'airlcnt.php';?></p>
                 </div>
                
@@ -121,7 +181,6 @@ require '../helpers/init_conn_db.php';?>
               
             </div>
 
-			<!-- log on to codeastro.com for more projects -->
           <div class="card mt-4" id="flight">
       <div class="card-body">
           <div class="dropdown" style="float: right;">
@@ -129,35 +188,60 @@ require '../helpers/init_conn_db.php';?>
               <i class="fa fa-filter"></i>
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#flight">Today's Flights</a>
-              <a class="dropdown-item" href="#issue">Today's flight issues</a>
-              <a class="dropdown-item" href="#dep">Flights departed today</a>
-              <a class="dropdown-item" href="#arr">Flights arrived today</a>
+              <a class="dropdown-item" href="#flight">Vuelos de Hoy</a>
+              <a class="dropdown-item" href="#issue">Retrasos Vuelos de Hoy</a>
+              <a class="dropdown-item" href="#dep">Partida Vuelos de Hoy</a>
+              <a class="dropdown-item" href="#arr">Llegada Vuelos de Hoy</a>
             </div>
-          </div>        
-        <p class="text-secondary">Today's Flights</p>
+          </div>
+          <div  class="dropdown" id="dropdown-filter" style="float: right;">
+            <form method="post" action="">
+              <div class="form-group-filter">
+                <label for="searchDate">Buscar por Fecha:</label>
+                <input type="date" class="form-control" name="searchDate" id="searchDate">
+                <input type="submit" class="btn btn-primary" value="Search | All Flights" style="background-color: #34495E; border: 1px solid #34495E">
+              </div>
+            </form>
+          </div> 
+        <p class="text-secondary">Vuelos de Hoy</p>
         <table class="table-sm table table-hover">
           <thead class="thead-dark">
-            <tr><!-- log on to codeastro.com for more projects -->
+            <tr>
               <th scope="col">#</th>
-              <th scope="col">Arrival</th>
-              <th scope="col">Departure</th>
-              <th scope="col">Destination</th>
-              <th scope="col">Source</th>
-              <th scope="col">Airlines</th>
+              <th scope="col">LLegada</th>
+              <th scope="col">Partida</th>
+              <th scope="col">Destino</th>
+              <th scope="col">Fuente</th>
+              <th scope="col">Aerolínea</th>
               <th>Action</th>
             </tr>
           </thead>
-          <tbody>     <!-- log on to codeastro.com for more projects -->         
+          <tbody>              
               <?php
-                $curr_date = (string)date('y-m-d');
-                $curr_date = '20'.$curr_date;
-                $sql = "SELECT * FROM Flight WHERE DATE(departure)=?";
-                $stmt = mysqli_stmt_init($conn);
-                mysqli_stmt_prepare($stmt,$sql);
-                mysqli_stmt_bind_param($stmt,'s',$curr_date);
-                mysqli_stmt_execute($stmt);
-                $result = mysqli_stmt_get_result($stmt);
+                $searchDate = "";
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                  $searchDate = $_POST["searchDate"];
+                  if (!empty($searchDate)) {
+                    $sql = "SELECT * FROM Flight WHERE DATE(departure) = ?";
+                    $stmt = mysqli_stmt_init($conn);
+                    mysqli_stmt_prepare($stmt, $sql);
+                    mysqli_stmt_bind_param($stmt, "s", $searchDate);
+                    mysqli_stmt_execute($stmt);
+                    $result = mysqli_stmt_get_result($stmt);
+                  } else {
+                    $sql = "SELECT * FROM Flight";
+                    $stmt = mysqli_stmt_init($conn);
+                    mysqli_stmt_prepare($stmt, $sql);
+                    mysqli_stmt_execute($stmt);
+                    $result = mysqli_stmt_get_result($stmt);
+                  }
+                } else {
+                  $sql = "SELECT * FROM Flight";
+                  $stmt = mysqli_stmt_init($conn);
+                  mysqli_stmt_prepare($stmt, $sql);
+                  mysqli_stmt_execute($stmt);
+                  $result = mysqli_stmt_get_result($stmt);
+                }
                 while ($row = mysqli_fetch_assoc($result)) {
                   if($row['status']== '') {
                     echo '     
@@ -208,24 +292,24 @@ require '../helpers/init_conn_db.php';?>
           <div class="dropdown" style="float: right;">
             <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fa fa-filter"></i>
-            </button><!-- log on to codeastro.com for more projects -->
+            </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#flight">Today's flight</a>
-              <a class="dropdown-item" href="#issue">Today's flight issues</a>
-              <a class="dropdown-item" href="#dep">Flights departed today</a>
-              <a class="dropdown-item" href="#arr">Flights arrived today</a>
+              <a class="dropdown-item" href="#flight">Vuelos de Hoy</a>
+              <a class="dropdown-item" href="#issue">Retrasos Vuelos de Hoy</a>
+              <a class="dropdown-item" href="#dep">Partida Vuelos de Hoy</a>
+              <a class="dropdown-item" href="#arr">Llegada Vuelos de Hoy</a>
             </div>
           </div>        
-        <p class="text-secondary">Today's Flight Issues</p>
+        <p class="text-secondary">Retrasos en los Vuelos de Hoy</p>
         <table class="table-sm table table-hover">
         <thead class="thead-dark">
-            <tr><!-- log on to codeastro.com for more projects -->
+            <tr>
               <th scope="col">#</th>
-              <th scope="col">Arrival</th>
-              <th scope="col">Departure</th>
-              <th scope="col">Destination</th>
-              <th scope="col">Source</th>
-              <th scope="col">Airline</th>
+              <th scope="col">Llegada</th>
+              <th scope="col">Partida</th>
+              <th scope="col">Destino</th>
+              <th scope="col">Fuente</th>
+              <th scope="col">Aerolínea</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -281,24 +365,24 @@ require '../helpers/init_conn_db.php';?>
           <div class="dropdown" style="float: right;">
             <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fa fa-filter"></i>
-            </button><!-- log on to codeastro.com for more projects -->
+            </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#flight">Today's flight</a>
-              <a class="dropdown-item" href="#issue">Today's flight issues</a>
-              <a class="dropdown-item" href="#dep">Flights departed today</a>
-              <a class="dropdown-item" href="#arr">Flights arrived today</a>
+              <a class="dropdown-item" href="#flight">Vuelos de Hoy</a>
+              <a class="dropdown-item" href="#issue">Retrasos en los Vuelos</a>
+              <a class="dropdown-item" href="#dep">Partida de los Vuelos Hoy</a>
+              <a class="dropdown-item" href="#arr">Llegada de los Vuelos Hoy</a>
             </div>
           </div>        
-        <p class=" text-secondary">Flights Departed Today</p>
+        <p class=" text-secondary">Partida de los Vuelos Hoy</p>
         <table class="table-sm table table-hover">
         <thead class="thead-dark">
-            <tr><!-- log on to codeastro.com for more projects -->
+            <tr>
               <th scope="col">#</th>
-              <th scope="col">Arrival</th>
-              <th scope="col">Departure</th>
-              <th scope="col">Destination</th>
-              <th scope="col">Source</th>
-              <th scope="col">Airline</th>
+              <th scope="col">Llegada</th>
+              <th scope="col">Partida</th>
+              <th scope="col">Destino</th>
+              <th scope="col">Fuente</th>
+              <th scope="col">Aerolínea</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -354,24 +438,24 @@ require '../helpers/init_conn_db.php';?>
         <div class="dropdown" style="float: right;">
             <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fa fa-filter"></i>
-            </button><!-- log on to codeastro.com for more projects -->
+            </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#flight">Today's flight</a>
-              <a class="dropdown-item" href="#issue">Today's flight issues</a>
-              <a class="dropdown-item" href="#dep">Flights departed today</a>
-              <a class="dropdown-item" href="#arr">Flights arrived today</a>
+              <a class="dropdown-item" href="#flight">Vuelos de Hoy</a>
+              <a class="dropdown-item" href="#issue">Retrasos en los Vuelos</a>
+              <a class="dropdown-item" href="#dep">Partida Vuelos de Hoy</a>
+              <a class="dropdown-item" href="#arr">Llegada Vuelos de Hoy</a>
             </div>
           </div>        
-        <p class=" text-secondary">Flights Arrived Today</p>
+        <p class=" text-secondary">Llegada Vuelos de Hoy</p>
         <table class="table-sm table table-hover">
         <thead class="thead-dark">
-            <tr><!-- log on to codeastro.com for more projects -->
+            <tr>
               <th scope="col">#</th>
-              <th scope="col">Arrival</th>
-              <th scope="col">Departure</th>
-              <th scope="col">Destination</th>
-              <th scope="col">Source</th>
-              <th scope="col">Airline</th>
+              <th scope="col">Llegada</th>
+              <th scope="col">Partida</th>
+              <th scope="col">Destino</th>
+              <th scope="col">Fuente</th>
+              <th scope="col">Aerolínea</th>
             </tr>
           </thead>
           <tbody>
