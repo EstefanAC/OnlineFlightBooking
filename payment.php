@@ -1,4 +1,4 @@
-<?php include_once 'helpers/helper.php'; ?><!-- log on to codeastro.com for more projects -->
+<?php include_once 'helpers/helper.php'; ?>
 <?php subview('header.php'); ?>
 <link rel="stylesheet" href="assets/css/form.css">
 <style>
@@ -57,9 +57,9 @@ h1 {
 }
 
 body {
-  background: #bdc3c7;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #bdc3c7;  
+  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  
+  background: linear-gradient(to right, #2c3e50, #bdc3c7); 
 
 }
 
@@ -94,10 +94,10 @@ input[type=number]:focus,
 	<div class="container-fluid py-3">
     <div class="row">
         <div class="col-12 col-sm-8 col-md-6 col-lg-4 mx-auto">
-          <h1 class="text-center text-light">PAY INVOICE</h1>
+          <h1 class="text-center text-light">PAGAR FACTURA</h1>
             <div id="pay-invoice" class="card">
                 <div class="card-body">
-            <label for="fname">Accepted Cards</label>
+            <label for="fname">Tarjetas Aceptadas</label>
             <div class="icon-container">
               <i class="fa fa-cc-visa fa-3x" style="color:navy;"></i>
               <i class="fa fa-cc-amex fa-3x" style="color:blue;"></i>
@@ -105,21 +105,21 @@ input[type=number]:focus,
               <i class="fa fa-cc-discover fa-3x" style="color:orange;"></i>
                <i class="fa fa-cc-stripe fa-3x" style="color:blue;"></i>
             </div>
-            <hr><!-- log on to codeastro.com for more projects -->
+            <hr>
             <form action="includes/payment.inc.php" method="post" 
                 novalidate="novalidate" class="needs-validation">
   
                 <div class="form-group">
-                    <label for="cc-number" class="control-label mb-1">Card number</label>
+                    <label for="cc-number" class="control-label mb-1">Número de tarjeta</label>
                     <input id="cc-number" name="cc-number" type="tel" class="form-control cc-number identified visa" required autocomplete="off"  >
-                    <span class="invalid-feedback">Enter a valid 12 to 16 digit card number</span>
+                    <span class="invalid-feedback">Ingresa un número de tarjeta válido de 12 a 16 dígitos</span>
                 </div>
                 <div class="row">
                     <div class="col-6">
                         <div class="form-group">
-                            <label for="cc-exp" class="control-label mb-1">Expiration</label>
+                            <label for="cc-exp" class="control-label mb-1">Expiración</label>
                             <input id="cc-exp" name="cc-exp" type="tel" class="form-control cc-exp" required placeholder="MM / YY" autocomplete="cc-exp">
-                            <span class="invalid-feedback">Enter the expiration date</span>
+                            <span class="invalid-feedback">Ingresa la fecha de expiración</span>
                         </div>
                     </div>
                     <div class="col-6 p-0">
@@ -127,10 +127,10 @@ input[type=number]:focus,
                         <div class="row">
                             <div class="col pr-0">
                                 <input id="x_card_code" name="x_card_code" type="password" class="form-control cc-cvc" required autocomplete="off">
-                            </div><!-- log on to codeastro.com for more projects -->
+                            </div>
                             <div class="col pr-0">                            
-                                <span class="invalid-feedback order-last">Enter the 3-digit code on back</span>
-                                <div class="input-group-append"><!-- log on to codeastro.com for more projects -->
+                                <span class="invalid-feedback order-last">Ingresa el código de 3 dígitos en la parte posterior</span>
+                                <div class="input-group-append">
                                     <div class="input-group-text">
                                     <span class="fa fa-question-circle fa-lg" data-toggle="popover" data-container="body" data-html="true" data-title="CVV" 
                                     data-content="<div class='text-center one-card'>The 3 digit code on back of the card..<div class='visa-mc-cvc-preview'></div></div>"
@@ -144,13 +144,13 @@ input[type=number]:focus,
                 
                 <br/>
 
-                <div class='form-row'><!-- log on to codeastro.com for more projects -->
+                <div class='form-row'>
                 <div class='col-md-12 mb-2'>
                     <button id="payment-button" type="submit"  name="pay_but"
                     class="btn btn-lg btn-primary btn-block">
                         <i class="fa fa-lock fa-lg"></i>&nbsp;
-                        <span id="payment-button-amount">Pay </span>
-                        <span id="payment-button-sending" style="display:none;">Sending…</span>
+                        <span id="payment-button-amount">Pagar </span>
+                        <span id="payment-button-sending" style="display:none;">Enviando...</span>
                     </button>
                 </div>
             </form>
@@ -202,21 +202,21 @@ $("#payment-button").click(function(e) {
        
         $("#cc-number").addClass('required');
         $("#cc-number").focus();
-        alert(" Enter a valid 10 to 16 card number");
+        alert(" Ingrese un número válido de tarjeta (10-16 números)");
         return false;
       }
       else if (!regCVV.test(cvv)) {
        
         $("#x_card_code").addClass('required');
         $("#x_card_code").focus();
-        alert(" Enter a valid CVV");
+        alert(" Ingrese el código CVV de su tajeta");
         return false;
       }
       else if (!regMonth.test(date[0]) && !regMonth.test(date[1]) ) {
        
         $("#cc_exp").addClass('required');
         $("#cc_exp").focus();
-        alert(" Enter a valid exp date");
+        alert(" Ingrese una fecha válida de expiración");
         return false;
       }
       
