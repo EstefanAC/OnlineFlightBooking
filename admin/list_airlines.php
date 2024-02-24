@@ -55,14 +55,14 @@ td {
         <?php if(isset($_SESSION['adminId'])) { ?>
           <div class="container-md mt-2">
             <h1 class="display-4 text-center text-secondary"
-              >AIRLINES LIST</h1>
+              >LISTAR AEROLÍNEAS</h1>
             <table class="table table-bordered">
               <thead class="table-dark">
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col">Name</th>
-                  <th scope="col">Seats</th>
-                  <th scope="col">Action</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Asientos</th>
+                  <th scope="col">Acción</th>
 
                 </tr>
               </thead>
