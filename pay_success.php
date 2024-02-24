@@ -8,9 +8,9 @@
     box-sizing: border-box;
 }
 body {
-  background: #bdc3c7;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #bdc3c7;  
+  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  
+  background: linear-gradient(to right, #2c3e50, #bdc3c7); 
 
 }
 
@@ -108,20 +108,38 @@ h3{
           font-size: 1.2rem;
           margin-bottom: 10px;
       }
-}    
+}
+
+.btn-home{
+  background-color: #6c757d;
+  font-size: 2em;
+  padding: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  color: white;
+  box-sizing: border-box;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn-home:hover{
+  color: #bdc3c7;
+  text-decoration: none;
+}
 </style>
   <main>
     <div class="container">
-      <h3 class="container-heading">Payment Successful!</h3>
+      <h3 class="container-heading">Pago Exitoso!</h3>
       <img
         class="container-image"
         src="https://res.cloudinary.com/dmnazxdav/image/upload/v1599736321/tick_hhudfj.svg"
-        alt="Payment SuccesFul"
+        alt="Pago Exitoso"
       />
-      <h3 class="container-welcome">Thank you for choosing us</h3>
+      <h3 class="container-welcome">Gracias por elegirnos</h3>
       <p class="container-text">
-        An automated payment receipt will be sent to your registered email.
+        Se enviará un recibo de pago automáticamente al correo electrónico registrado.
       </p>
+      <a href="http://localhost/vuelos/my_flights.php" class="btn-home">Ir a mis vuelos</a>
     </div>
 </main>
 <?php subview('footer.php'); ?> 
