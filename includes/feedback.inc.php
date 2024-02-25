@@ -4,7 +4,7 @@ if(isset($_POST['feed_but'])) {
     $email = $_POST['email'];
     $q1 = $_POST['1'];
     $q2 = $_POST['2'];
-    // $q3 = $_POST['3'];
+    
     $stars = $_POST['stars'];
     if(!filter_var($email,FILTER_VALIDATE_EMAIL)) {
         header('Location: ../feedback.php?error=invalidemail');
