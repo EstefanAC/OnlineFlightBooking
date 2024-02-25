@@ -14,9 +14,9 @@ h1{
 	text-align:center;
 }
 body {
-  background: #bdc3c7;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #bdc3c7;  
+  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  
+  background: linear-gradient(to right, #2c3e50, #bdc3c7);
 
 }
 .login-form {
@@ -26,10 +26,10 @@ body {
 </style>
 <div class="flex-container">
     <div class="login-form mt-5" style="height: 350px;">
-        <h1 class="text-center text-secondary mb-4">Reset Password</h1>
+        <h1 class="text-center text-secondary mb-4">Restablecer contraseña</h1>
         <div class="alert text-center alert-info mb-0" 
             style="margin-left: 60px; margin-right:60px;" role="alert">   
-            An email will be send to you with the instructions on how to reset the password.
+            Ingrese un correo electrónico para enviar las intrucciones para restablecer su contraseña.
         </div>
         <form method="POST" action="includes/reset-request.inc.php">            
             <div class="flex-container">             
@@ -51,13 +51,13 @@ body {
 <?php
 if(isset($_GET['err']) || isset($_GET['mail'])) {
     if($_GET['err'] === 'invalidemail') {
-        echo '<script>alert("Invalid email");</script>';
+        echo '<script>alert("Correo electrónico inválido");</script>';
     } else if($_GET['err'] === 'sqlerr') {
-        echo '<script>alert("An error occured");</script>';        
+        echo '<script>alert("Se produjo un error");</script>';        
     } else if($_GET['mail'] === 'success') {
-        echo '<script>alert("Email has been succesfully sent to you");</script>';        
+        echo '<script>alert("El correo electrónico ha sido enviado satisfactoriamente");</script>';        
     } else if($_GET['err'] === 'mailerr') {
-        echo '<script>alert("An error occured");</script>';        
+        echo '<script>alert("Ocurrió un error");</script>';        
     }                    
 } 
 ?>
