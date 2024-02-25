@@ -17,37 +17,8 @@ if(isset($_POST['pass_but']) && isset($_SESSION['userId'])) {
         exit();         
     }
     $date_len = count($_POST['date']);
-    for($i=0;$i<$date_len;$i++) {        
-        $date_mnth = (int)substr($_POST['date'][$i],5,2);
-        $flag = false;
-        if($date_mnth > (int)date('m')){
-          $flag = true;
-        } else if($date_mnth == (int)date('m')){
-          if((int)substr($_POST['date'][$i],8,2) >= (int)date('d')) {
-            $flag = true;            
-          } 
-        }  
-        if($flag) {
-            header('Location: ../pass_form.php?error=invdate');
-            exit();    
-            break;
-        }      
-    }        
-    $stmt = mysqli_stmt_init($conn);
-    $sql = 'SELECT * FROM Passenger_profile';
-    $stmt = mysqli_stmt_init($conn);
-    if(!mysqli_stmt_prepare($stmt,$sql)) {
-        header('Location: ../pass_form.php?error=sqlerror');
-        exit();            
-    } else {
-        mysqli_stmt_bind_param($stmt,'ii',$flight_id,$_SESSION['userId']);            
-        mysqli_stmt_execute($stmt);
-        $result = mysqli_stmt_get_result($stmt);
-        $flag = false;
-        while ($row = mysqli_fetch_assoc($result)) {
-            $pass_id=$row['passenger_id'];
-        }
-    } 
+
+
     if(is_null($pass_id)) {
         $pass_id = 0;
         $stmt = mysqli_stmt_init($conn);
