@@ -1,7 +1,7 @@
-<?php include_once 'header.php'; ?><!-- log on to codeastro.com for more projects -->
+<?php include_once 'header.php'; ?>
 <?php include_once 'footer.php';
 require '../helpers/init_conn_db.php';?>
-<style><!-- log on to codeastro.com for more projects -->
+<style>
 table {
   background-color: white;
 }
@@ -31,18 +31,18 @@ td {
         <?php if(isset($_SESSION['adminId'])) { ?>
           <div class="container-md mt-2">
             <h1 class="display-4 text-center text-secondary"
-              >Passenger List</h1>
+              >Listar Pasajeros</h1>
             <table class="table table-bordered">
               <thead class="thead-dark">
                 <tr>
-                  <th>#</th><!-- log on to codeastro.com for more projects -->
-                  <th scope="col">First Name</th>
-                  <th scope="col">Middle Name</th>
-                  <th scope="col">Last Name</th>
-                  <th scope="col">Contact</th>
-                  <th scope="col">D.O.B</th>
-                  <th scope="col">Paid By</th>
-                  <th scope="col">Amount</th>
+                  <th>#</th>
+                  <th scope="col">Primer Nombre</th>
+                  <th scope="col">Segundo Nombre</th>
+                  <th scope="col">Apellido</th>
+                  <th scope="col">Contacto</th>
+                  <th scope="col">Fecha Nacimiento</th>
+                  <th scope="col">Pagado Por</th>
+                  <th scope="col">Cantidad</th>
 
                 </tr>
               </thead>
@@ -107,4 +107,4 @@ td {
           </div>
         <?php } ?>
 
-    </main><!-- log on to codeastro.com for more projects -->
+    </main>
