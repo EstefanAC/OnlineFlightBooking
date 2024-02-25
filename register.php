@@ -5,9 +5,9 @@
 <style>
 
 body {
-    background: #bdc3c7;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #bdc3c7;  
+background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  
+background: linear-gradient(to right, #2c3e50, #bdc3c7);
 
 
 }
@@ -17,7 +17,7 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
 }
 h3 {
     text-align: center;
-    /* font-family: 'Italianno', cursive; */
+    
     font-family: 'product sans', cursive;      
     font-weight: normal;
     font-size: 55px;
@@ -25,7 +25,7 @@ h3 {
 }
 
 input {
-    /* background-color: #F8F9FA !important; */
+    
     margin-bottom: 10px;
     border :0px !important;
     border-bottom: 2px solid #838383 !important;
@@ -109,15 +109,15 @@ input {
 <?php
 if(isset($_GET['error'])) {
     if($_GET['error'] === 'invalidemail') {
-        echo '<script>alert("Invalid email")</script>';
+        echo '<script>alert("Correo inválido")</script>';
     } else if($_GET['error'] === 'pwdnotmatch') {
-        echo '<script>alert("Passwords do not match")</script>';
+        echo '<script>alert("Contraseñas no coinciden")</script>';
     } else if($_GET['error'] === 'sqlerror') {
-        echo"<script>alert('Database error')</script>";
+        echo"<script>alert('Error en la base de datos')</script>";
     } else if($_GET['error'] === 'usernameexists') {
-        echo"<script>alert('Username already exists')</script>";
+        echo"<script>alert('El usuario ya existe')</script>";
     } else if($_GET['error'] === 'emailexists') {
-        echo"<script>alert('Email already exists')</script>";
+        echo"<script>alert('Correo ya registrado')</script>";
     }
 }
 ?>
@@ -133,7 +133,7 @@ if(isset($_GET['error'])) {
     <div class="col-md-10 register-right">
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                <h3 class="register-heading text-secondary">PASSENGER REGISTRATION</h3>
+                <h3 class="register-heading text-secondary">Registro de pasajeros</h3>
                 <div class="register-form">
                 <form method="POST" action="includes/register.inc.php">
                     <div class="conrainer-fluid">
@@ -144,7 +144,7 @@ if(isset($_GET['error'])) {
                         </div>
                         <div class="col-md">
                             <div class="input-group">
-                                <label for="username">Username</label>
+                                <label for="username">Nombre de Usuario</label>
                                 <input type="text" name="username" id="username" required />                                
                             </div>  
                         </div>
@@ -154,7 +154,7 @@ if(isset($_GET['error'])) {
                         </div>                    
                         <div class="col-md">
                             <div class="input-group">
-                                <label for="email_id">Email</label>
+                                <label for="email_id">Correo</label>
                                 <input type="text" name="email_id" id="email_id"
                                         required>                                         
                             </div>                                     
@@ -167,11 +167,10 @@ if(isset($_GET['error'])) {
                         </div>                        
                         <div class="col-md">
                             <div class="input-group">
-                                <label for="password">Password</label>
+                                <label for="password">Contraseña</label>
                                 <input type="password" name="password" id="password"            
                                 required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                                title="Must contain at least one number and one uppercase and lowercase letter,
-                                and at least 8 or more characters" />                                        
+                                title="La contraseña debe tener mínimo 8 dígitos, una mayúscula, un número y un caracter especial" />                                        
                             </div>                                     
 
                         </div>
@@ -181,7 +180,7 @@ if(isset($_GET['error'])) {
                         </div>                        
                         <div class="col-md">
                             <div class="input-group">
-                                <label for="password_repeat">Confirm password</label>
+                                <label for="password_repeat">Confirmar contraseña</label>
                                 <input type="password" name="password_repeat" 
                                     id="password_repeat" required>
                             </div>                                     
@@ -191,7 +190,7 @@ if(isset($_GET['error'])) {
                         <button name="signup_submit" type="submit" 
                             class="btn btn-info mt-5">
                             <div style="font-size: 1.5rem;">
-                            <i class="fa fa-lg fa-arrow-right"></i> Complete  
+                            <i class="fa fa-lg fa-arrow-right"></i> Registro existoso 
                             </div>
                         </button>                            
                     </div>
@@ -218,10 +217,7 @@ $(document).ready(function(){
       $("label[for='"+me.attr('id')+"']").removeClass("animate-label");
     }
   }) ;
-  // $('#test-form').submit(function(e){
-  //   e.preventDefault() ;
-  //   alert("Thank you") ;
-  // })
+ 
 });    
 </script>
  
