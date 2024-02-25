@@ -68,9 +68,9 @@
   text-shadow: 0 0 5px #09f;
 }  
 body {
-  background: #bdc3c7;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #bdc3c7;  
+  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  
+  background: linear-gradient(to right, #2c3e50, #bdc3c7); 
 
 }
 @font-face {
@@ -133,11 +133,11 @@ input {
 <?php
 if(isset($_GET['error'])) {
     if($_GET['error'] === 'invalidemail') {
-        echo '<script>alert("Invalid email")</script>';
+        echo '<script>alert("Correo inválido")</script>';
     } else if($_GET['error'] === 'sqlerror') {
-        echo"<script>alert('Database error')</script>";
+        echo"<script>alert('Error de base de datos')</script>";
     } else if($_GET['error'] === 'success') {
-      echo"<script>alert('Thank you for your Feedback')</script>";
+      echo"<script>alert('Gracias por tu Feedback')</script>";
     } 
 }
 ?>
@@ -149,14 +149,13 @@ if(isset($_GET['error'])) {
       <div class="row justify-content-center">  
           <div class="col-12 ">              
             <div class="input-group">
-                <label for="user_id">Email</label>
+                <label for="user_id">Correo</label>
                 <input type="text" name="email" id="user_id" required >
               </div>              
           </div>                      
           <div class="col-12 mt-4">
             <div class="form-group">         
-              <label for="exampleFormControlTextarea1">What was your first impression
-                  when you entered the website?</label>     
+              <label for="exampleFormControlTextarea1">¿Cual es tu primera impresion de ingresar a la aplicación?</label>     
               <textarea class="form-control" id="exampleFormControlTextarea1" name="1"                
                 rows="3" required></textarea>
             </div>                
@@ -168,20 +167,19 @@ if(isset($_GET['error'])) {
               2px solid #31B0D5; background-color: whitesmoke !important;
               font-weight: bold !important;color :cornflowerblue !important;
               width:100%" required>
-                <option  selected disabled>How did you first hear about us?</option>
-                <option >Search Engine</option>
-                <option >Social Media</option>
-                <option >Friend/Relative</option>
-                <option >Word of Mouth</option>
+                <option  selected disabled>¿Còmo nos Encontraste?</option>
+                <option >Internet</option>
+                <option >Redes Sociales</option>
+                <option >Te conto un Amigo</option>                
                 <option >Television</option>
-                <option>Other</option>
+                <option >Otros</option>
               </select> 
             </div>                
           </div>                   
           
           <div class="col-12 mt-4">
             <div class="form-group">         
-              <label for="exampleFormControlTextarea1">Is there anything missing on this page?</label>     
+              <label for="exampleFormControlTextarea1">Dejanos tus recomendaciones para mejorar nuestro servicio</label>     
               <textarea class="form-control" id="exampleFormControlTextarea1" name="3"                
                 rows="3" required></textarea>
             </div>                
@@ -250,17 +248,14 @@ if(isset($_GET['error'])) {
       $("label[for='"+me.attr('id')+"']").removeClass("animate-label");
     }
   }) ;
-  // $('#test-form').submit(function(e){
-  //   e.preventDefault() ;
-  //   alert("Thank you") ;
-  // })
+
 });
 </script>
 </main>
 <footer>
 	<em><h5 class="text-light text-center p-0 brand mt-2">
-				<img src="assets/images/airtic.png" 
+				<img src="assets/images/logo1.png" 
 					height="40px" width="40px" alt="">				
-			Online Flight Booking</h5></em>
-	<p class="text-light text-center">&copy; <?php echo date('Y');?> - Developed By Sujoy Dcunha, Christina Pereira, Mark Coutinho</p>
+			VIAJES VERUM SOMMIÀ</h5></em>
+	<p class="text-light text-center">&copy; <?php echo date('Y');?> - Desarrollado por Grupo Desarrollo de Sistemas</p>
 </footer>
