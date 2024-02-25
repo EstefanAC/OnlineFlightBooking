@@ -52,7 +52,7 @@ if(isset($_POST['signup_submit'])) {
                             mysqli_stmt_bind_param($stmt,'sss',$username,$email_id,$pwd_hash);            
                             mysqli_stmt_execute($stmt);  
                             
-                            // LOGIN USer                            
+                                                      
                             $sql = 'SELECT * FROM Users WHERE username=? OR email=?;';
                             $stmt = mysqli_stmt_init($conn);
                             if(!mysqli_stmt_prepare($stmt,$sql)) {
