@@ -1,10 +1,10 @@
-<?php include_once 'helpers/helper.php'; ?><!-- log on to codeastro.com for more projects -->
+<?php include_once 'helpers/helper.php'; ?>
 <?php subview('header.php'); ?>
 <style>
 body {
-  background: #bdc3c7;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #bdc3c7;  
+  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  
+  background: linear-gradient(to right, #2c3e50, #bdc3c7); 
 
 }
 @font-face {
@@ -12,7 +12,7 @@ body {
   src: url('assets/css/Product Sans Bold.ttf');
 }
 h2.brand {
-    /* font-style: italic; */
+   
     font-size: 27px !important;
 }
 .vl {
@@ -52,7 +52,7 @@ h2 {
     color: #d9d9d9;
 }
 h3 {
-    /* font-weight: lighter !important; */
+    
     font-size: 21px !important;
     margin-bottom: 20px;  
     font-family: Tahoma, sans-serif;
@@ -66,7 +66,7 @@ h1 {
     font-weight: bolder;
   }
 </style>
-<main><!-- log on to codeastro.com for more projects -->
+<main>
   <?php if(isset($_SESSION['userId'])) {   
     require 'helpers/init_conn_db.php';   
     
@@ -108,7 +108,7 @@ h1 {
     
     ?>     
     <div class="container mb-5"> 
-    <h1 class="text-center text-light mt-4 mb-4">E-TICKETS</h1>
+    <h1 class="text-center text-light mt-4 mb-4">TICKETS</h1>
 
       <?php 
       $stmt = mysqli_stmt_init($conn);
@@ -159,7 +159,7 @@ h1 {
                             <div class="row ">                                                     
                                 <div class="col">
                                     <h2 class="text-secondary mb-0 brand">
-                                        Online Flight Booking</h2> 
+                                    VIAJES VERUM SOMMIÁ</h2> 
                                 </div>
                                 <div class="col">
                                     <h2 class="mb-0">'.$class_txt.' CLASS</h2>
@@ -168,47 +168,47 @@ h1 {
                             <hr>
                             <div class="row mb-3">  
                                 <div class="col-4">
-                                    <p class="head">Airline</p>
+                                    <p class="head">Aerolinea</p>
                                     <p class="txt">'.$row_f['airline'].'</p>
                                 </div>            
                                 <div class="col-4">
-                                    <p class="head">from</p>
+                                    <p class="head">desde</p>
                                     <p class="txt">'.$row_f['source'].'</p>
                                 </div>
                                 <div class="col-4">
-                                    <p class="head">to</p>
+                                    <p class="head">hacia</p>
                                     <p class="txt">'.$row_f['Destination'].'</p>                
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <div class="col-8">
-                                    <p class="head">Passenger</p>
+                                    <p class="head">Pasajero</p>
                                     <p class=" h5 text-uppercase">
                                     '.$row_p['f_name'].' '.$row_p['m_name'].' '.$row_p['l_name'].'
                                     </p>                              
                                 </div>
                                 <div class="col-4">
-                                    <p class="head">board time</p>
+                                    <p class="head">hora de abordaje</p>
                                     <p class="txt">12:45</p>
                                 </div> 
                             </div>
                             <div class="row">
                                 <div class="col-3">
-                                    <p class="head">departure</p>
+                                    <p class="head">Ciudad de Salida</p>
                                     <p class="txt mb-1">'.$date_dep.'</p>
                                     <p class="h1 font-weight-bold mb-3">'.$time_dep.'</p>  
                                 </div>            
                                 <div class="col-3">
-                                    <p class="head">arrival</p>
+                                    <p class="head">Ciudad de destino</p>
                                     <p class="txt mb-1">'.$date_arr.'</p>
                                     <p class="h1 font-weight-bold mb-3">'.$time_arr.'</p>  
                                 </div>
                                 <div class="col-3">
-                                    <p class="head">gate</p>
+                                    <p class="head">Puerta de abordaje</p>
                                     <p class="txt">A22</p>
                                 </div>            
                                 <div class="col-3">
-                                    <p class="head">seat</p>
+                                    <p class="head">numero asiento</p>
                                     <p class="txt">'.$row['seat_no'].'</p>
                                 </div>                
                             </div>                    
@@ -218,19 +218,19 @@ h1 {
                             <div class="row">  
                                 <div class="col">                                    
                                 <h2 class="text-light text-center brand">
-                                    Online Flight Booking</h2> 
+                                VIAJES VERUM SOMMIÁ</h2> 
                                 </div>                                      
                             </div>                             
                             <div class="row justify-content-center">
                                 <div class="col-12">                                    
-                                    <img src="assets/images/airtic.png" class="mx-auto d-block"
+                                    <img src="assets/images/logo1.png" class="mx-auto d-block"
                                     height="200px" width="200px" alt="">
                                 </div>                                
                             </div>
                             <div class="row">
                                 <h3 class="text-light2 text-center mt-2 mb-0">
-                                &nbsp Thank you for choosing us. </br> </br>
-                                    Please be at the gate at boarding time</h3>   
+                                &nbsp Gracias por elegirnos. </br> </br>
+                                    Por favor llegue con tiempo a la puerta de abordaje</h3>   
                             </div>                            
                         </div>   
                         
@@ -249,7 +249,7 @@ h1 {
                                             value='.$row['ticket_id'].'>
                                         <button class="btn btn-danger btn-sm"
                                             name="cancel_but">
-                                            <i class="fa fa-trash"></i> &nbsp; Cancel Ticket</button>
+                                            <i class="fa fa-trash"></i> &nbsp; Cancelar Ticket</button>
                                     </form>
                                     <form class="px-4 py-3" action="e_ticket.php" target="_blank"
                                         method="post">
@@ -257,7 +257,7 @@ h1 {
                                             value='.$row['ticket_id'].'>
                                         <button class="btn w-100 mb-3 btn-primary btn-sm"
                                             name="print_but">
-                                            <i class="fa fa-print"></i> &nbsp; Print Ticket</button>
+                                            <i class="fa fa-print"></i> &nbsp; Imprimir Ticket</button>
                                     </form>                                    
                                 </div>
                             </div>              
@@ -274,6 +274,6 @@ h1 {
        ?> 
 
     </div>
-  </main><!-- log on to codeastro.com for more projects -->
+  </main>
   <?php } ?>
   <?php subview('footer.php'); ?> 
