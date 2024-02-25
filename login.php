@@ -4,17 +4,17 @@
 <link rel="stylesheet" href="assets/css/form.css">
 <?php
 if(isset($_GET['pwd'])) {
-    if($_GET['pwd']=='updated') {
-        echo "<script>alert('Your password has been reset!!');</script>";
+    if($_GET['pwd']=='Actualizar') {
+        echo "<script>alert('Tu contraseña de cambio con exito!!');</script>";
     }
 }    
 ?>
 <?php
 if(isset($_GET['error'])) {
     if($_GET['error'] === 'invalidcred') {
-        echo '<script>alert("Invalid Credentials")</script>';
+        echo '<script>alert("Credenciales Invalidas")</script>';
     } else if($_GET['error'] === 'wrongpwd') {
-        echo '<script>alert("Wrong Password")</script>';
+        echo '<script>alert("Contraseña Incorrecta")</script>';
     } else if($_GET['error'] === 'sqlerror') {
         echo"<script>alert('Database error')</script>";
     }
@@ -63,11 +63,10 @@ if(isset($_COOKIE['Uname']) && isset($_COOKIE['Upwd'])) {
 ?>
 <style>
   body {
-    /* padding-top: 20px; */
-    /* background-image: url('assets/images/bg6.jpg'); */
-    background: #bdc3c7;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    background: #bdc3c7;  
+background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  
+background: linear-gradient(to right, #2c3e50, #bdc3c7); 
 
 
   
@@ -105,14 +104,7 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
   a:hover {
     text-decoration: none;
   }
-  /* .btn-outline-light {
-    color :#0275d8;
-    border-color: #0275d8 !important;
-  }
-  .btn-outline-light:hover {
-    color: white !important;
-    background-color: #0275d8 !important;
-  } */
+
   @font-face {
   font-family: 'product sans';
   src: url('assets/css/Product Sans Bold.ttf');
@@ -156,7 +148,7 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
   <div class="row">
     <div class="col-md-3"></div>
       <div class="bg-light form-out col-md-6">
-      <h1 class="text-secondary text-center">LOG IN PANEL</h1>
+      <h1 class="text-secondary text-center">INICIAR SESION</h1>
       
       <form method="POST" class=" text-center" 
         action="includes/login.inc.php">
@@ -168,7 +160,7 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
             </div> 
           <div class="col-10 mb-2">              
             <div class="input-group">
-                <label for="user_id">Username/ Email</label>
+                <label for="user_id">Usuario / Email</label>
                 <input type="text" name="user_id" id="user_id" required
                    >
               </div>              
@@ -179,7 +171,7 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
           </div>                
           <div class="col-10">
             <div class="input-group">
-                <label for="user_pass">Password</label>
+                <label for="user_pass">Contraseña</label>
                 <input type="password" name="user_pass" id="user_pass"
                       required>
               </div>            
@@ -190,7 +182,7 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
        
           <div class="col">
           <a id="reset-pass" class="mr-5" href="reset-pwd.php"
-              style="float: right !important;">Reset Password</a>        
+              style="float: right !important;">Recuperar Contraseña</a>        
           </div>         
         </div>   
         <div class="row mt-4">
@@ -198,7 +190,7 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
             <a href="register.php">
               <button type="button" class="btn btn-info mt-3">
                 <div style="font-size: 1.5rem;">
-                <i class="fas fa-user-plus text-light"></i> Register
+                <i class="fas fa-user-plus text-light"></i> Registrarte
                 </div>
               </button>
             </a> 
@@ -207,7 +199,7 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
             <button name="login_but" type="submit" 
               class="btn btn-success mt-3">
               <div style="font-size: 1.5rem;">
-              <i class="fa fa-lg fa-arrow-right"></i> Login
+              <i class="fa fa-lg fa-arrow-right"></i> Inicio
               </div>
             </button>
           </div>       
@@ -232,10 +224,7 @@ $(document).ready(function(){
       $("label[for='"+me.attr('id')+"']").removeClass("animate-label");
     }
   }) ;
-  // $('#test-form').submit(function(e){
-  //   e.preventDefault() ;
-  //   alert("Thank you") ;
-  // })
+
 });
 </script>
 </main>
@@ -250,6 +239,6 @@ $(document).ready(function(){
 	<em><h5 class="text-light text-center p-0 brand mt-2">
 				<img src="assets/images/airtic.png" 
 					height="40px" width="40px" alt="">				
-			Online Flight Booking</h5></em>
+			VIAJES VERUM SOMMIÀ</h5></em>
 	<p class="text-light text-center">&copy; <?php echo date('Y')?></p>
 </footer>
