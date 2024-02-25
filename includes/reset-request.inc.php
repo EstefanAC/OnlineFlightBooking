@@ -67,7 +67,7 @@ if(isset($_POST['reset-req-submit'])) {
         header('Location: ../reset-pwd.php?mail=success');       
     } 
     catch(Exception $e) {        
-        // echo $mail->ErrorInfo;
+        
         header('Location: ../reset-pwd.php?err=mailerr');      
     }
    
