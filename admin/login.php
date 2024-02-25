@@ -2,7 +2,7 @@
 <?php
 if(isset($_GET['pwd'])) {
     if($_GET['pwd']=='updated') {
-        echo "<script>alert('Your password has been reset!!');</script>";
+        echo "<script>alert('Tu contraseña ha sido restablecida!!');</script>";
     }
 }
 ?>
@@ -76,11 +76,11 @@ background: linear-gradient(to left, #29323c, #485563); /* W3C, IE 10+/ Edge, Fi
 <?php
 if(isset($_GET['error'])) {
     if($_GET['error'] === 'invalidcred') {
-        echo '<script>alert("Invalid Credentials")</script>';
+        echo '<script>alert("Credenciales Invalidas")</script>';
     } else if($_GET['error'] === 'wrongpwd') {
-        echo '<script>alert("Wrong Password")</script>';
+        echo '<script>alert("Contraseña Incorrecta")</script>';
     } else if($_GET['error'] === 'sqlerror') {
-        echo"<script>alert('Database error')</script>";
+        echo"<script>alert('Error en Base de Datos')</script>";
     }
 }
 ?>
@@ -89,15 +89,15 @@ if(isset($_GET['error'])) {
     <?php
     if(isset($_GET['error'])) {
         if($_GET['error'] === 'destless') {
-            echo "<script>alert('Dest. date/time is less than src.');</script>";
+            echo "<script>alert('Dest. fecha/hora es menor que src.');</script>";
         } else if($_GET['error'] === 'sqlerr') {
-          echo "<script>alert('Database error');</script>";
+          echo "<script>alert('Error en Base de Datos');</script>";
         }
     }
     ?>
     <div class="col-md-3"></div>
       <div class="bg-light form-out col-md-6">
-      <h1 class="text-secondary text-center">ADMIN LOGIN</h1>
+      <h1 class="text-secondary text-center">ACCESO ADMINISTRADOR</h1>
       
       <form method="POST" class=" text-center" 
         action="../includes/admin/login.inc.php">
@@ -109,7 +109,7 @@ if(isset($_GET['error'])) {
             </div> 
           <div class="col-10 mb-2">              
             <div class="input-group">
-                <label for="user_id">Username/ Email</label>
+                <label for="user_id">Usuario/ Correo</label>
                 <input type="text" name="user_id" id="user_id" required
                    >
               </div>              
@@ -120,7 +120,7 @@ if(isset($_GET['error'])) {
           </div>                
           <div class="col-10">
             <div class="input-group">
-                <label for="user_pass">Password</label>
+                <label for="user_pass">Contraseña</label>
                 <input type="password" name="user_pass" id="user_pass"
                       required>
               </div>            
@@ -130,7 +130,7 @@ if(isset($_GET['error'])) {
         <button name="login_but" type="submit" 
           class="btn btn-danger mt-5">
           <div style="font-size: 1.5rem;">
-          <i class="fa fa-lg fa-arrow-right"></i> Login 
+          <i class="fa fa-lg fa-arrow-right"></i> Inicio de Sesión 
           </div>
         </button>
       </form>
