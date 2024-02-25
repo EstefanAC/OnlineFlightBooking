@@ -1,7 +1,7 @@
 # VIAJES VERUM SOMMIA
 
 ## Ventana Inicio
-![localhost_OnlineFlightBooking-PHP_](https://github.com/EstefanAC/OnlineFlightBooking/assets/147363893/2a0f099b-8169-4b82-826a-a9ba9956be2b)
+![ventana_inicio](https://github.com/EstefanAC/VIAJES_VERUM_SOMMIA/assets/147363893/0401c030-7ff6-4396-9952-7fb45064fdbf)
 
 ## Panel Administrador
 ![panel_administrador_1](https://github.com/EstefanAC/VIAJES_VERUM_SOMMIA/assets/147363893/5f6389f1-bf3e-4370-a0e4-cc6f4b749509)
