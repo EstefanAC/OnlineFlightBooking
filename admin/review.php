@@ -42,7 +42,7 @@ div.review-bag {
 <?php if(isset($_SESSION['adminId'])) { ?>
 <main>
 <div class="container mt-4 mb-4">
-  <h1 class="text-center mb-4 text-light">CUSTOMER REVIEWS</h1>
+  <h1 class="text-center mb-4 text-light">OPINIONES DE CLIENTES</h1>
   <div class="row">
     <?php
     $sql = 'SELECT * FROM feedback ORDER BY feed_id DESC';
@@ -66,11 +66,11 @@ div.review-bag {
           <span class="fa fa-star fa-lg '.$arr[3].'"></span>
           <span class="fa fa-star fa-lg '.$arr[4].'"></span>        
         </p>
-        <p class="quest">What was your first impression when you entered the website?</p>
+        <p class="quest">¿Cuál fue su primera impresión cuando ingresaste al sitio web?</p>
         <p class="ans">'.$row['q1'].'</p>
-        <p class="quest">How did you first hear about us?</p>
+        <p class="quest">¿Cómo se enteró de nosotros por primera vez?</p>
         <p class="ans">'.$row['q2'].'</p>
-        <p class="quest">Is there anything missing on this page?</p>
+        <p class="quest">¿Falta algo en esta página?</p>
         <p class="ans">'.$row['q3'].'</p>
       </div> 
       </div>   ';      
