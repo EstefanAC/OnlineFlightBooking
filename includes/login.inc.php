@@ -9,6 +9,7 @@ if(isset($_POST['login_but'])) {
         header('Location: ../login.php?error=sqlerror');
         exit();            
     } else {
+        
         mysqli_stmt_bind_param($stmt,'ss',$email_id,$email_id);            
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
