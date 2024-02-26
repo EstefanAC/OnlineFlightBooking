@@ -112,7 +112,7 @@ input[type=number]:focus,
                 <div class="form-group">
                     <label for="cc-number" class="control-label mb-1">Número de tarjeta</label>
                     <input id="cc-number" name="cc-number" type="tel" class="form-control cc-number identified visa" required autocomplete="off"  >
-                    <span class="invalid-feedback">Ingresa un número de tarjeta válido de 12 a 16 dígitos</span>
+                    <span class="invalid-feedback">Ingresa un número de tarjeta válido de 10 a 16 dígitos</span>
                 </div>
                 <div class="row">
                     <div class="col-6">
@@ -202,7 +202,7 @@ $("#payment-button").click(function(e) {
        
         $("#cc-number").addClass('required');
         $("#cc-number").focus();
-        alert(" Ingrese un número válido de tarjeta (10-16 números)");
+        alert(" Ingrese un número válido de tarjeta (10-16 Dígitos)");
         return false;
       }
       else if (!regCVV.test(cvv)) {
