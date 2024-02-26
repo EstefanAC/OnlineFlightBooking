@@ -17,14 +17,12 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ofbsphp`
+-- Base de Datos: `ofbsphp`
 --
 
 -- --------------------------------------------------------
 
---
--- 
---
+
 
 CREATE TABLE `admin` (
   `admin_id` int(11) NOT NULL,
@@ -42,9 +40,7 @@ INSERT INTO `admin` (`admin_id`, `admin_uname`, `admin_email`, `admin_pwd`) VALU
 (2, 'carlos', 'carlos@mail.com', 'Carlos.123');
 -- --------------------------------------------------------
 
---
--- 
---
+
 
 CREATE TABLE `airline` (
   `airline_id` int(11) NOT NULL,
@@ -71,9 +67,7 @@ INSERT INTO `airline` (`airline_id`, `name`, `seats`) VALUES
 
 -- --------------------------------------------------------
 
---
--- 
---
+
 
 CREATE TABLE `cities` (
   `city` varchar(20) NOT NULL
@@ -105,9 +99,7 @@ INSERT INTO `cities` (`city`) VALUES
 
 -- --------------------------------------------------------
 
---
--- 
---
+
 
 CREATE TABLE `feedback` (
   `feed_id` int(11) NOT NULL,
@@ -120,9 +112,7 @@ CREATE TABLE `feedback` (
 
 -- --------------------------------------------------------
 
---
--- 
---
+
 
 CREATE TABLE `flight` (
   `flight_id` int(11) NOT NULL,
@@ -160,9 +150,7 @@ INSERT INTO `flight` (`flight_id`, `admin_id`, `arrivale`, `departure`, `Destina
 
 -- --------------------------------------------------------
 
---
--- 
---
+
 
 CREATE TABLE `passenger_profile` (
   `passenger_id` int(11) NOT NULL,
@@ -175,23 +163,8 @@ CREATE TABLE `passenger_profile` (
   `l_name` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Datos tabla `passenger_profile`
---
+-----------------------------------------------------------
 
-INSERT INTO `passenger_profile` (`passenger_id`, `user_id`, `flight_id`, `mobile`, `dob`, `f_name`, `m_name`, `l_name`) VALUES
-(1, 1, 1, '2147483647', '1995-01-01 00:00:00', 'Christine', 'M', 'Moore'),
-(2, 2, 3, '2147483647', '1995-02-13 00:00:00', 'Henry', 'l', 'Stuart'),
-(3, 3, 2, '2147483647', '1994-06-21 00:00:00', 'Andre', 'J', 'Atkins'),
-(4, 4, 2, '2147483647', '1995-05-16 00:00:00', 'James', 'K', 'Harbuck'),
-(5, 2, 8, '7854444411', '1995-02-13 00:00:00', 'Henry', 'l', 'Stuart'),
-(6, 2, 20, '7412585555', '1995-02-13 00:00:00', 'Henry', 'l', 'Stuart');
-
--- --------------------------------------------------------
-
---
--- 
---
 
 CREATE TABLE `payment` (
   `card_no` varchar(16) NOT NULL,
@@ -215,9 +188,7 @@ INSERT INTO `payment` (`card_no`, `user_id`, `flight_id`, `expire_date`, `amount
 
 -- --------------------------------------------------------
 
---
--- 
---
+
 
 CREATE TABLE `pwdreset` (
   `pwd_reset_id` int(11) NOT NULL,
@@ -229,9 +200,7 @@ CREATE TABLE `pwdreset` (
 
 -- --------------------------------------------------------
 
---
--- 
---
+
 
 CREATE TABLE `ticket` (
   `ticket_id` int(11) NOT NULL,
@@ -257,9 +226,7 @@ INSERT INTO `ticket` (`ticket_id`, `passenger_id`, `flight_id`, `user_id`, `seat
 
 -- --------------------------------------------------------
 
---
--- 
---
+
 
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
@@ -278,13 +245,9 @@ INSERT INTO `users` (`user_id`, `username`, `email`, `password`) VALUES
 (3, 'andre', 'andre@mail.com', '$2y$10$KRXGkY.dxYjD8FLZclW/Tu04wl76lD7IA4Z3nAsxtpdZxHNbYo4ZW'),
 (4, 'james', 'james@mail.com', '$2y$10$KRXGkY.dxYjD8FLZclW/Tu04wl76lD7IA4Z3nAsxtpdZxHNbYo4ZW');
 
---
--- 
---
 
---
--- 
---
+----------------------------------------------------------------------------
+
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`admin_id`);
 
@@ -344,12 +307,10 @@ ALTER TABLE `ticket`
 ALTER TABLE `users`
   ADD PRIMARY KEY (`user_id`);
 
---
--- AUTO_INCREMENT 
---
+--------------------------------------------------------------------------
 
 --
--- 
+-- AUTO_INCREMENT
 --
 ALTER TABLE `admin`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
@@ -388,12 +349,10 @@ ALTER TABLE `ticket`
 --
 ALTER TABLE `users`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
--- Restricciones
---
 
---
--- 
+
+------------------------------------------------------------------------------
+-- Restricciones
 --
 ALTER TABLE `flight`
   ADD CONSTRAINT `flight_ibfk_1` FOREIGN KEY (`admin_id`) REFERENCES `admin` (`admin_id`);
